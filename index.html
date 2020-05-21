@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home-finder</title>
+</head>
+<body>
+    <p>Best project ever!!!</p>
+</body>
+</html><div style="text-align:center">
+    <h1>Installed Client Printers</h1>
+    <hr />
+    <select name="installedPrinterName" id="installedPrinterName"></select>
+</div>
+<!--JSPrintManager scripts-->
+<script type="text/javascript" src="https://jsprintmanager.azurewebsites.net/scripts/JSPrintManager.js"> </script>
+<script type="text/javascript" src="https://jsprintmanager.azurewebsites.net/scripts/zip.js"> </script>
+<script type="text/javascript" src="https://jsprintmanager.azurewebsites.net/scripts/zip-ext.js"> </script>
+<script type="text/javascript" src="https://jsprintmanager.azurewebsites.net/scripts/deflate.js"> </script>
+<!--end JSPrintManager scripts-->
+<!--JSPrintManager List Client Printers Sample-->
+<script type="text/javascript">
+    //WebSocket settings
+    JSPM.JSPrintManager.auto_reconnect = true;
+    JSPM.JSPrintManager.start();
+    JSPM.JSPrintManager.WS.onStatusChanged = function () {
+        if (jspmWSStatus()) {
+            //get client installed printers
+            JSPM.JSPrintManager.getPrinters().then(function (clientPrinters) {
+                var sel = document.getElementById("installedPrinterName");
+                for (var i = 0; i < clientPrinters.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = option.text = clientPrinters[i];
+                    sel.add(option);
+                }
+            });
+        }
+    };
+    //Check JSPM WebSocket status
+    function jspmWSStatus() {
+        if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Open)
+            return true;
+        else if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.Closed) {
+            alert('JSPrintManager (JSPM) is not installed or not running! Download JSPM Client App from https://neodynamic.com/downloads/jspm');
+            return false;
+        }
+        else if (JSPM.JSPrintManager.websocket_status == JSPM.WSStatus.BlackListed) {
+            alert('JSPM has blacklisted this website!');
+            return false;
+        }
+    }
+</script>
+<!--end JSPrintManager List Client Printers Sample-->
