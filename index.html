@@ -8,45 +8,99 @@
 
     <!-- Materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Materialize JS -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <script type="text/javascript" src="assets/js/app.js"></script>
+
 
     <title>Home Finder</title>
 </head>
 
 <body>
-    <div>
-        <nav>
-            <div class="nav-wrapper purple darken-3">
-                <a href="#!" class="center brand-logo"><img src="assets/images/home.png" width="100px" height="64px">Home
-                    Finder</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
-                <ul class="left hide-on-med-and-down">
-                    <li><a href="#">Search homes</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
-            
-        </nav>
 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="#">Search homes</a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
-    </div>
+
+    <header>
+        <nav class="nav-wrapper transparent white-text">
+            <div class="container">
+                
+                <a href="#" class="brand-logo">Home Finder</a>
+
+                <!-- Mobile Device Menu -->
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <!-- Navigation Bar -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#search">Search Homes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                    <!-- Fab Icons -->
+                    <li>
+                        <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Facebook">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+            
+                    <li>
+                        <a href="#" class="tooltipped btn-floating btn-small indigo darken-4" data-tooltip="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- The menu that will appear when the page is viewed in mobile device -->
+                <ul class="sidenav grey lighten-2">
+                    <li><a href="#search">Search Homes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                 
+
+            </div>
+        </nav>
+    </header>
+
+
+
     <div class="container row">
         <article class="col s12">
             <p>Content of the page would go here. Maybe information on the company and such.</p>
             <p class="flow-text">Flow Text Content</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe eligendi culpa ducimus quam voluptas. Officia, laboriosam consectetur? Earum praesentium atque voluptatibus quae tenetur doloribus nisi impedit, quod adipisci eligendi cupiditate.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque tempora quod accusantium. Minima iusto tempore odit esse maxime. Id repellat facere corporis consequuntur iste voluptate veritatis consequatur saepe! Ex.</p>
+
         </article>
     </div>
+
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <script>
+         $(document).ready(function(){
+
+            // Initialize the Side Nav
+            $(".sidenav").sidenav();
+
+         })
+    </script>
+
 </body>
 
 </html>
