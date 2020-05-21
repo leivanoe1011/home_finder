@@ -25,7 +25,8 @@
     <div>
         <nav>
             <div class="nav-wrapper purple darken-3">
-                <a href="#!" class="center brand-logo"><img src="assets/images/home.png" width="100px" height="64px">Home
+                <a href="#!" class="center brand-logo"><img src="assets/images/home.png" width="100px"
+                        height="64px">Home
                     Finder</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
                 <ul class="left hide-on-med-and-down">
@@ -33,7 +34,7 @@
                     <li><a href="#">Contact us</a></li>
                 </ul>
             </div>
-            
+
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
@@ -41,7 +42,90 @@
             <li><a href="#">Contact us</a></li>
         </ul>
     </div>
-    <div class="container row">
+    <div class="container">
+        <div class="row">
+            <div class="col s12"></div>
+            <div class="row">
+               
+                <form action="">
+                  <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email">
+                    <label for="email">Your Email</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">message</i>
+                    <textarea id="message" class="materialize-textarea"></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                  <div class="input-field">
+                    <input type="text" id="date" class="datepicker">
+                    <label for="date">Choose a data you need me for</label>
+                  </div>
+                  <div class="input-field">
+                    <p>Services Required...</p>
+                    <p>
+                      <label>
+                        <input type="checkbox">
+                        <span>Photography</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input type="checkbox">
+                        <span>Editing</span>
+                      </label>
+                    </p>
+                  </div>
+                  <div class="input-field center">
+                    <button class="btn">Submit</button>
+                  </div>
+                </form>
+              </div>
+              <!-- End of Form -->
+
+            </div> <form action="#">
+                <p>
+                  <label>
+                    <input type="checkbox" />
+                    <span>Red</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" checked="checked" />
+                    <span>Yellow</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Filled in</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input id="indeterminate-checkbox" type="checkbox" />
+                    <span>Indeterminate Style</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" checked="checked" disabled="disabled" />
+                    <span>Green</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input type="checkbox" disabled="disabled" />
+                    <span>Brown</span>
+                  </label>
+                </p>
+              </form>
+
+
+        </div>
+
         <article class="col s12">
             <p>Content of the page would go here. Maybe information on the company and such.</p>
             <p class="flow-text">Flow Text Content</p>
