@@ -32,7 +32,7 @@ $(document).ready(function () {
         
         function createCard() {
             var row = $(".row");
-            var colum = $("<div class='col l4'>");
+            var column = $("<div class='col l4'>");
             var card = $("<div class='card medium'>");
             var cardImgDiv = $("<div class='card-image'>");
             var cardBackground = $("<img class='responsive-img'>");
@@ -78,9 +78,9 @@ $(document).ready(function () {
             card.append(cardImgDiv);
             card.append(cardContent);
 
-            colum.append(card);
+            column.append(card);
 
-            row.append(colum);
+            row.append(column);
         };
     });
 });
