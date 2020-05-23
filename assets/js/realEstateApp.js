@@ -131,7 +131,7 @@ function realtorCall(city, state, zip, limit){
             + "&limit=" + listing_Limit 
             + "&offset=0"
             +"&state_code=" + listing_state_code + "",
-
+            
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "realtor.p.rapidapi.com",
