@@ -140,7 +140,7 @@ function realtorCall(city, state, zip, limit){
     }
 
 
-    $.ajax(settings).done(function (response) {
+    $.ajax(settings).on(function (response) {
         console.log(response);
         
         displayResults(response);

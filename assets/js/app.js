@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var zipCode = 37664;//$("#userZip").val().trim();
     var city = "kingsport";//$("#userCity").val().trim();
-    var listCount = 12;//$("#listCount").val();
+    var listCount = 9;//$("#listCount").val();
     var stateCode = 47;//$("#stateCode").val().trim();
     var apiKey = "0c292c0993mshd75f0effe5adad9p120e45jsn157b0022e4d8";
 
@@ -23,39 +23,61 @@ $(document).ready(function () {
         console.log(response);
         var results = response.properties
         for (i = 0; i < results.length; i++) {
-            var card = $("<div>");
-            var innerCard = $("<div>");
-            var imgCard = $("<img>");
-            var spanCard = $("<span>");
-            var container = $(".container");
-            var imgDiv = $("<div>");
+            createCard();
+        };
+        
+        
+        function createCard() {
+            var row = $(".row");
+            var colum = $("<div class='col l4'>");
+            var card = $("<div class='card medium'>");
+            var cardImgDiv = $("<div class='card-image'>");
+            var cardBackground = $("<img class='responsive-img'>");
+            var spanCard = $("<span class='card-title'>");
+            var cardContent = $("<div class='card-content'>");
+            var cardAction = $("<div class='card-action'>");
+            var lotSize = $("<p>");
+            var bedBaths = $("<p>");
+            var buildingSize = $("<p>");
 
+            var house = results[i]
 
+            spanCard.html(house.address.line);
 
-            spanCard.html(results[i].address.line)
+            // card.addClass("card medium");
 
-            card.addClass("card medium");
+            // innerCard.addClass("card-image");
 
-            innerCard.addClass("card-image");
+            cardBackground.attr("src", house.thumbnail);
 
-            imgCard.attr("src", results[i].thumbnail);
+            lotSize.html("Lot size: " + house.lot_size.size.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " " + house.lot_size.units);
 
-            imgCard.addClass("responsive-img");
+            buildingSize.html("Building size: " + house.building_size.size.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " " + house.building_size.units);
 
-            spanCard.addClass("card-title");
+            bedBaths.html("Beds: " + house.beds + " Baths: " + house.baths);
 
-            imgDiv.addClass("col l4")
-            
-            
+            cardAction.html("<a href='" + house.rdc_web_url + "'>" + "check out the property" + "</a>")
 
-            
+            // cardBackground.addClass("responsive-img");
 
-            innerCard.append(imgCard);
-            innerCard.append(spanCard);
-            card.append(innerCard);
-            imgDiv.append(card);
-            $(".row").append(imgDiv);
-            
-        }
+            // spanCard.addClass("card-title");
+
+            // imgDiv.addClass("col l4");
+ 
+            cardContent.append(cardAction); 
+            cardContent.append(bedBaths);
+            cardContent.append(buildingSize);
+            cardContent.append(lotSize);
+        
+            cardImgDiv.append(cardBackground);
+            cardImgDiv.append(spanCard);
+
+            card.append(cardImgDiv);
+            card.append(cardContent);
+
+            colum.append(card);
+
+            row.append(colum);
+        };
     });
 });
