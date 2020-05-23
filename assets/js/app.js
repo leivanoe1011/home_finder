@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    $('.sidenav').sidenav();
+
     var zipCode = 37664;//$("#userZip").val().trim();
     var city = "kingsport";//$("#userCity").val().trim();
     var listCount = 9;//$("#listCount").val();
